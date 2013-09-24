@@ -1,0 +1,50 @@
+@import 'bootstrap';
+
+$backgroundColor: #969277;
+
+
+header{
+  background-color: #2b032a;
+  a {
+    color: #c73a51;
+    text-decoration: none;
+    &:hover{
+      color: darken(#c73a51, 10%);
+      text-decoration: none;
+    }
+  }
+  text-align: center;
+}
+
+body{
+  background-color: $backgroundColor;  
+}
+
+#carousel .item img{
+  max-height: 100%;
+}
+
+.image_container {
+  height: 300px; 
+  font-size: 0;
+    text-align: center;
+}
+
+.image_container:before {
+content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.image_container > img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.background-wrapper{
+  background-color: lighten($backgroundColor,20%);
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

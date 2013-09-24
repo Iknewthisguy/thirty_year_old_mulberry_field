@@ -1,0 +1,28 @@
+---
+images_per_row: 3
+rows_per_page: 3
+---
+
+.background-wrapper
+  .container
+    .row  
+      .span12
+        #carousel.slide
+          .carousel-inner
+            = partial "image_display"
+          %a.carousel-control.left{href: "#carousel", data: {slide: "prev"}}
+            &lsaquo;
+          %a.carousel-control.right{href: "#carousel", data: {slide: "next"}}
+            &rsaquo;
+.container
+  .row  
+    .span6 
+      .pull-left
+        = link_to "archive", "archive.html"
+    .span6
+      .pull-right
+        = link_to "exhibition", "exhibition.html"
+
+              
+.website 
+  = link_to "brianvalenzuela.com", "http://brianvalenzuela.com"

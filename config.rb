@@ -18,7 +18,7 @@
 # Per-page layout changes:
 #
 # With no layout
-# page "/path/to/file.html", :layout => false
+# page "/about.html", :layout => false
 #
 # With alternative layout
 # page "/path/to/file.html", :layout => :otherlayout
@@ -46,6 +46,7 @@
 #     "Helping"
 #   end
 # end
+activate :livereload
 
 set :css_dir, 'stylesheets'
 
@@ -66,6 +67,8 @@ configure :build do
 
   # Minify Javascript on build
   activate :minify_javascript
+
+  activate :directory_indexes
 
   # Enable cache buster
   # activate :cache_buster

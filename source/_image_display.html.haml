@@ -1,0 +1,11 @@
+- images_per_row = current_page.data.images_per_row
+- rows_per_page = current_page.data.rows_per_page
+- images_per_page = images_per_row * rows_per_page
+- paintings_collection.each_slice(images_per_page) do |image_page|
+  .item
+    - image_page.each_slice(images_per_row) do |image_row|
+      .row
+        - image_row.each do |image|
+          %div{ :class => "span#{12/images_per_row}"}
+            .image_container
+              = image_tag "paintings/#{image}"

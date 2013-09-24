@@ -3,31 +3,25 @@ title: Thirty Year Old Mulberry Field
 body_class: index
 ---
 
-%body
-  .section.header
-    .w-container
-      .company-title THIRTY-YEAR-OLD MULBERRY FIELD
-  %div
-    .w-clearfix.hero-bg
-      .w-clearfix.collection
-        %img.painting{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-        %img{:alt => "middleman.png", :src => "images/middleman.png"}/
-      .links 
-        archive
-        contact
-  .website brianvalenzuela.com
-  
+
+.container
+  .row  
+    .span12 
+      - 5.times do
+        .row
+          .span2.offset1
+            = image_tag "paintings/Optimusprimealtmoviemode.jpg"
+          - 4.times do
+            .span2
+              = image_tag "paintings/Optimusprimealtmoviemode.jpg"
+      .row-fluid
+        .links
+          .span6 
+            .pull-left
+              = link_to "archive", "archive.html"
+          .span6
+            .pull-right
+              = link_to "exhibition", "exhibition.html"
+              
+      .website 
+        = link_to "brianvalenzuela.com", "http://brianvalenzuela.com"
