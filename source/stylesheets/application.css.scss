@@ -1,12 +1,15 @@
 @import 'bootstrap';
 
-$backgroundColor: #969277;
+$backgroundColor: #A5A38E;
+$complimentColor: #CDCCB0 ;
+$accentText: #BF7618;
+
 
 
 header{
-  background-color: #2b032a;
+  background-color: #2E061E;
   a {
-    color: #c73a51;
+    color: #C83A6A;
     text-decoration: none;
     &:hover{
       color: darken(#c73a51, 10%);
@@ -20,7 +23,7 @@ body{
   background-color: $backgroundColor;  
 }
 
-#carousel .item img{
+#carousel .item img, .shifty_image img{
   max-height: 100%;
 }
 
@@ -43,8 +46,35 @@ content: "";
 }
 
 .background-wrapper{
-  background-color: lighten($backgroundColor,20%);
+  background-color: $complimentColor;
   margin-top: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
+  min-height: 900px;
+}
+
+.links{
+  font-family:'Sail', cursive;
+  font-size: 36px;
+  text-decoration: none;
+  a{
+    text-decoration: none;
+    color: $accentText;
+    &:hover{
+      color: darken($accentText, 10%)
+    }
+  }
+}
+
+.website{
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+  a{
+    text-decoration:none;
+    color: $accentText;
+    &:hover{
+      color: darken($accentText, 10%)
+    }
+  }
 }

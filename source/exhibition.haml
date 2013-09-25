@@ -2,21 +2,26 @@
 images_per_row: 3
 rows_per_page: 3
 ---
+:javascript
+  paintings = #{paintings_collection.to_json}
+
+
+.row.template.hide
+  .span4.image_container.shifty_image
+    %img
 
 .background-wrapper
   .container
-    .row  
-      .span12
-        = partial "image_display"
-.container
+    .stuff
+        
+.container.links
   .row  
     .span6 
       .pull-left
         = link_to "archive", "archive.html"
     .span6
       .pull-right
-        = link_to "exhibition", "exhibition.html"
+        = mail_to "brianvalenzuela@brianvalenzuela.com","contact"
 
               
-.website 
-  = link_to "brianvalenzuela.com", "http://brianvalenzuela.com"
+= partial "footer"

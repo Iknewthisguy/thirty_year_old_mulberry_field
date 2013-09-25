@@ -1,5 +1,5 @@
 module PaintingHelpers
   def paintings_collection
-    Dir.entries("#{root}/source/images/paintings").reject{|entry| entry =~ /^\.{1,2}$/}
+    Dir.entries("#{root}/source/images/paintings").select{|entry| entry =~ /^.+\.(jpg|png|gif|jpeg)$/}
   end
 end

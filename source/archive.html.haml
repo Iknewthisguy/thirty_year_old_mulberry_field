@@ -14,15 +14,14 @@ rows_per_page: 3
             &lsaquo;
           %a.carousel-control.right{href: "#carousel", data: {slide: "next"}}
             &rsaquo;
-.container
+.container.links
   .row  
     .span6 
       .pull-left
-        = link_to "archive", "archive.html"
+        = link_to "exhibition", "exhibition.html"
     .span6
       .pull-right
-        = link_to "exhibition", "exhibition.html"
+        = mail_to "brianvalenzuela@brianvalenzuela.com","contact"
 
               
-.website 
-  = link_to "brianvalenzuela.com", "http://brianvalenzuela.com"
+= partial "footer"
