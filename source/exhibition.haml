@@ -7,18 +7,22 @@ rows_per_page: 3
 
 
 .row.template.hide
-  .span4.image_container.shifty_image
-    %img
+  .span4.image_container
+    %a
+      %img
 
-.background-wrapper
-  .container
-    .stuff
+.container
+  .row
+    .span12
+      .exhibit-background
+        .container
+          .stuff
         
 .container.links
   .row  
     .span6 
       .pull-left
-        = link_to "archive", "archive.html"
+        = link_to image_tag("home-archivelink.jpg"), "archive.html"
     .span6
       .pull-right
         = mail_to "brianvalenzuela@brianvalenzuela.com","contact"

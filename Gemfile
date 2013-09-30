@@ -6,4 +6,6 @@ gem "middleman", "~>3.1.5"
 gem "middleman-deploy"
 gem "bootstrap-sass", '~> 2.3.2', require: false
 gem 'middleman-livereload'
+gem 'middleman-thumbnailer', :git => 'git://github.com/nhemsley/middleman-thumbnailer.git'
+
 gem 'pry'

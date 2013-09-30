@@ -8,44 +8,16 @@ body_class: index
   .row  
     .span12 
       .row
-        .span2.offset1
-          = image_tag "letters/3.png"
-          = image_tag "letters/A.jpg"
-          = image_tag "letters/d.jpg"
-          = image_tag "letters/e.jpeg"
-          = image_tag "letters/i.jpg"
-        .span2
-          = image_tag "letters/0.gif"
-          = image_tag "letters/r.jpeg"
-          = image_tag "letters/m.jpg"
-          = image_tag "letters/r.jpeg"
-          = image_tag "letters/e.jpeg"
-        .span2
-          = image_tag "letters/hyphen.jpeg"
-          = image_tag "letters/hyphen.jpeg"
-          = image_tag "letters/u.jpg"
-          = image_tag "letters/r.jpeg"
-          = image_tag "letters/l.jpeg"
-        .span2
-          = image_tag "letters/Y.jpg"
-          = image_tag "letters/o.jpg"
-          = image_tag "letters/l.jpeg"
-          = image_tag "letters/Y.jpg"
-          = image_tag "letters/d.jpg"
-        .span2
-          = image_tag "letters/e.jpeg"
-          = image_tag "letters/l.jpeg"
-          = image_tag "letters/B.jpg"
-          = image_tag "letters/f.jpeg"
-          = image_tag "letters/pink.gif"
+        .span12
+          = image_tag "home-title.jpg", width: "100%"
       
 .container.links
   .row  
     .span6 
       .pull-left
-        = link_to "archive", "archive.html"
+        = link_to image_tag("home-archivelink.jpg"), "archive.html"
     .span6
       .pull-right
-        = link_to "exhibition", "exhibition.html"
+        = link_to image_tag("home-contactlink.jpg"), "exhibition.html"
 
 = partial "footer"

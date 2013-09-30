@@ -7,5 +7,6 @@
       .row
         - image_row.each do |image|
           %div{ :class => "span#{12/images_per_row}"}
-            .image_container
-              = image_tag "paintings/#{image}"
+            %a{href: "paintings/#{image}"}
+              .image_container
+                = image_tag "paintings/#{image}"

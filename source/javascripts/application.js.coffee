@@ -12,8 +12,12 @@ populateExhibition = ->
       t.append image
     t.removeClass 'hide'
     t.removeClass 'template'
-    t.find('img').each (index2, image) ->
-      $(image).attr 'src', "images/paintings/#{random_paintings[(index*3)+index2]}"
+    t.addClass 'shifty_image'
+    t.find('a').each (index2, image) ->
+      rand_paint = random_paintings[(index*3)+index2]
+      $(image).find('img').attr 'src', "images/paintings/#{rand_paint}"
+      $(image).attr 'href', "images/paintings/#{rand_paint}"
+      $(image).addClass('shifty_image')
     $('.stuff').append t
 
 $(document).on "mouseenter", ".shifty_image", ->
@@ -32,5 +36,6 @@ $ ->
   $('#carousel .item').first().addClass('active')
 
   populateExhibition()
-
-  
+  $('.shifty_image a').colorbox 
+    rel: 'gal',
+    scalePhotos: true

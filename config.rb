@@ -54,6 +54,14 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
+require "middleman-thumbnailer"
+activate :thumbnailer, 
+  :dimensions => {
+    :small => '200x',
+    :medium => '400x300'
+  },
+  :include_data_thumbnails => true
+
 # Build-specific configuration
 configure :build do
   ignore 'images/*.psd'
@@ -74,7 +82,7 @@ configure :build do
   # activate :cache_buster
 
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
 
   # Compress PNGs after build
   # First: gem install middleman-smusher
