@@ -6,7 +6,9 @@
     - image_page.each_slice(images_per_row) do |image_row|
       .row
         - image_row.each do |image|
-          %div{ :class => "span#{12/images_per_row}"}
-            %a{href: "paintings/#{image}"}
-              .image_container
-                = image_tag "paintings/#{image}"
+          %div
+            .span4
+              .archive_image
+                %a{href: "images/paintings/#{image}"}
+                  .image_container
+                    = thumbnail("paintings/#{image}", :medium)

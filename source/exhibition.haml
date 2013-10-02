@@ -5,18 +5,27 @@ rows_per_page: 3
 :javascript
   paintings = #{paintings_collection.to_json}
 
-
-.row.template.hide
-  .span4.image_container
-    %a
-      %img
+= partial "header"
+- images_per_row = current_page.data.images_per_row
+- rows_per_page = current_page.data.rows_per_page
+- image_collection = paintings_collection
+- images = image_collection.sample(9)
+- remaining_images = image_collection - images
 
 .container
   .row
     .span12
       .exhibit-background
         .container
-          .stuff
+          - rows_per_page.times do
+            .row
+              - images_per_row.times do
+                - image = images.pop(1)
+                .span4.shifty_image
+                  %a{href: "images/paintings/#{image.first}"}
+                    .image_container
+                      = thumbnail("paintings/#{image.first}", :medium)
+
         
 .container.links
   .row  
@@ -25,7 +34,14 @@ rows_per_page: 3
         = link_to image_tag("home-archivelink.jpg"), "archive.html"
     .span6
       .pull-right
-        = mail_to "brianvalenzuela@brianvalenzuela.com","contact"
-
+        %a{href: "mailto:brianvalenzuela@brianvalenzuela.com"}
+          = image_tag 'home-contactlink.jpg'
               
 = partial "footer"
+
+%div.hide
+  - remaining_images.each do |img|
+    .shifty_image
+      %a{href: "images/paintings/#{img}"}
+        .image_container
+          = thumbnail("paintings/#{img}", :medium)

@@ -54,13 +54,20 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
-require "middleman-thumbnailer"
 activate :thumbnailer, 
   :dimensions => {
     :small => '200x',
     :medium => '400x300'
   },
   :include_data_thumbnails => true
+
+activate :deploy do |deploy|
+  deploy.method = :git
+  # Optional Settings
+  deploy.host   = "www.thirtyyearoldmulberryfield.com"
+  # deploy.remote = "custom-remote" # remote name or git url, default: origin
+  # deploy.branch = "custom-branch" # default: gh-pages
+end
 
 # Build-specific configuration
 configure :build do
@@ -83,6 +90,7 @@ configure :build do
 
   # Use relative URLs
   activate :relative_assets
+  set :relative_links, true
 
   # Compress PNGs after build
   # First: gem install middleman-smusher
