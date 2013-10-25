@@ -9,6 +9,6 @@
           %div
             .span4
               .archive_image
-                %a{href: "images/paintings/#{image}"}
+                = link_to "/images/paintings/#{image}" do
                   .image_container
                     = thumbnail("paintings/#{image}", :medium)

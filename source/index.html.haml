@@ -4,20 +4,23 @@ body_class: index
 ---
 
 
-.container.home_title
+.container.text-center.home_title
   .row  
     .span12 
-      .row
-        .span12
-          = image_tag "home-title.jpg", width: "100%"
+      = image_tag "home-title.jpg", width: "75%"
       
 .container.links
   .row  
-    .span6 
+    .span6.offset1 
       .pull-left
         = link_to image_tag("home-archivelink.jpg"), "archive.html"
-    .span6
+    .span3.offset1
       .pull-right
         = link_to image_tag("home-ehib.link.jpg"), "exhibition.html"
+.container
+  .row
+    .row.text-center.contact
+      %a{href: "mailto:brianvalenzuela@brianvalenzuela.com"}
+        = image_tag 'home-contactlink.jpg'
 
 = partial "footer"

@@ -22,7 +22,7 @@ rows_per_page: 3
               - images_per_row.times do
                 - image = images.pop(1)
                 .span4.shifty_image
-                  %a{href: "images/paintings/#{image.first}"}
+                  = link_to "/images/paintings/#{image.first}" do
                     .image_container
                       = thumbnail("paintings/#{image.first}", :medium)
 
@@ -42,6 +42,6 @@ rows_per_page: 3
 %div.hide
   - remaining_images.each do |img|
     .shifty_image
-      %a{href: "images/paintings/#{img}"}
+      = link_to "/images/paintings/#{img}" do 
         .image_container
           = thumbnail("paintings/#{img}", :medium)
